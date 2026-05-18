@@ -9,6 +9,7 @@
     background-color: azure;
     box-shadow: 0 4px 8px rgba(0, 0, 0,0.3);
     padding: 16px;
+    height: 80px;
 }
 a{
     display: inline-block;
@@ -18,4 +19,19 @@ a{
 ul a:hover{
     transform: scale(1.1);
     text-decoration: underline;
+}
+
+@media (max-width : 425px){
+    .navbar{
+        flex-direction: column;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .compName h1{
+        font-size: 1.4rem;
+    }
+    ul{
+        justify-content: center;
+        font-size: 1.2rem;
+    }
 }
