@@ -1,7 +1,12 @@
+import Navbar from "../components/Navbar";
+
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <>
+    <Navbar/>
+    <h1>this is cart page</h1>
+    </>
   )
 }
 
