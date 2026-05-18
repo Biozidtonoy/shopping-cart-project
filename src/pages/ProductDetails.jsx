@@ -3,8 +3,24 @@ import { useParams } from 'react-router'
 import Navbar from '../components/Navbar'
 import '../styles/product.css'
 import useProductDetails from '../hooks/useProductDetails';
+import { useState } from 'react';
 
 function ProductDetails() {
+    const [count, setCount] = useState(0);
+
+    const incrementClick = () =>{
+        setCount(prev => prev + 1);
+    }
+    const decrementClick = () =>{
+        if(count > 0){
+           setCount(prev => prev - 1);
+        }else{
+            setCount(count)
+        }
+        
+        
+    }
+
     const { id } = useParams();
     const {products, error, loading} = useProductDetails();
 
@@ -31,13 +47,13 @@ function ProductDetails() {
             <p>rating : {selectedProduct.rating.rate}</p>
             <div className="quantity flex gap-3 border-2 ">
                 <div className="decrementBtn">
-                    <button>-</button>
+                    <button onClick={decrementClick}>-</button>
                 </div>
                 <div className="quantityDisplay">
-                    <h1>1</h1>
+                    <h1>{count}</h1>
                 </div>
                 <div className="incrementBox">
-                    <button>+</button>
+                    <button onClick={incrementClick}>+</button>
                 </div>
             </div>
             <div className="addToCartBtn">
