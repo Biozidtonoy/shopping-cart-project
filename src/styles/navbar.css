@@ -20,7 +20,11 @@ ul a:hover{
     transform: scale(1.1);
     text-decoration: underline;
 }
-
+.cart{
+    display: flex;
+    gap:5px;
+    
+}
 @media (max-width : 425px){
     .navbar{
         flex-direction: column;

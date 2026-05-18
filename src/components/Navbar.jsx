@@ -1,7 +1,13 @@
 import { Link } from "react-router"
 import '../styles/navbar.css'
 
-function Navbar() {
+function Navbar({cartItems}) {
+    const totalQuantity = cartItems.reduce(
+
+        (total, item) => total + item.quantity,
+
+        0
+    );
   return (
     <>
     <div className="navbar flex justify-around p-4">
@@ -12,7 +18,13 @@ function Navbar() {
             <ul className="flex gap-5 text-2xl ">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/shop">Shop</Link></li>
-                <li><Link to="/cart">Cart</Link></li>
+                <li><Link className="cart" to="/cart">Cart
+                {
+                    totalQuantity > 0 && (
+                        <div className="text-blue-400 font-bold">{totalQuantity}</div>
+                    )
+                }
+                </Link></li>
             </ul>
         </nav>
     </div>

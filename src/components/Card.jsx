@@ -11,7 +11,7 @@ function Card({id, title , price, imgUrl}) {
           <h1>{title} </h1>
         </div>
         <div className="productPrice">
-          <p>Price : {price}</p>
+          <p>Price : ${price}</p>
         </div>
         <div className="detailsBtn">
           <Link to={`/product/${id}`}>
